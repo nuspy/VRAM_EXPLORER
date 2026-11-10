@@ -1,0 +1,24 @@
+# Tutte le dipendenze erano gia' presenti sulla macchina di sviluppo; le versioni
+# indicate sono quelle verificate. Nessun pacchetto va compilato.
+
+# --- raccolta dati ---
+nvidia-ml-py>=12.535        # NVML: telemetria GPU (la memoria per processo viene da PDH)
+psutil>=5.9                 # identita' e controllo dei processi
+pywin32>=306                # named pipe, icone, risorse di versione, elevazione UAC
+
+# --- servizio e API ---
+fastapi>=0.110
+uvicorn>=0.27
+pydantic>=2.5
+httpx>=0.26                 # client per le API dei backend e per la CLI
+websockets>=12.0
+
+# --- interfaccia ---
+PySide6>=6.6                # GUI (LGPL)
+pyqtgraph>=0.13             # grafici in tempo reale
+pillow>=10.0                # conversione delle icone estratte dagli eseguibili
+numpy>=1.24                 # richiesto da pyqtgraph
+
+# --- opzionale ---
+# torch                     # serve solo dentro i processi osservati, per l'agent
+#                           # di introspezione; il servizio non lo importa mai.
